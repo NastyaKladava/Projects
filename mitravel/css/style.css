@@ -1,0 +1,18 @@
+@import "_normalize.css";
+@import "_fonts.css";
+@import "_variables.css";
+@import "_vendor.css";
+@import "_global.css";
+@import "_overall.css";
+
+/* components imports */
+
+@import "../css/components/_header.css";
+@import "../css/components/_first.css";
+@import "../css/components/_become.css";
+@import "../css/components/_featured.css";
+@import "../css/components/_slider.css";
+@import "../css/components/_newsletter.css";
+@import "../css/components/_insp.css";
+@import "../css/components/_footer.css";
+@import "../css/components/_media.css";
