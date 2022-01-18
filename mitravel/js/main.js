@@ -1,9 +1,10 @@
 const swiper1 = document.querySelector('.slider-container'),
       swiper2 = document.querySelector('.swiper-container'),
       burger = document.querySelector('.burger'),
-			close = document.querySelector('.menu__close'),
-			menu = document.querySelector('.menu'),
-		  playButtonsFirst = document.querySelectorAll('.main-slider__play');
+	  close = document.querySelector('.menu__close'),
+	  menu = document.querySelector('.menu'),
+	  menuLinks = document.querySelectorAll('.menu__link'),
+	  playButtonsFirst = document.querySelectorAll('.main-slider__play');
 
 let swiperSlider1 = new Swiper(swiper1, {
 	centeredSlides: true,
@@ -45,6 +46,14 @@ burger.addEventListener('click', () => {
 close.addEventListener('click', () => {
 	menu.classList.remove('menu--visible');
 });
+
+function closeMenuLinks(event) {
+	if (event.target.classList.contains('menu__link')) {
+        menu.classList.remove('menu--visible');
+    }
+}
+
+menuLinks.forEach((el) => el.addEventListener('click', closeMenuLinks));
 
 playButtonsFirst.forEach((el) => {
 	 el.addEventListener('click', (e) => {
