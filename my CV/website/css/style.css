@@ -316,7 +316,7 @@ section {
 }
 
 .skills__item {
-  width: 400px;
+  width: 440px;
   border-radius: 15px;
   border: 2px solid rgba(100, 149, 237, 0.5);
   padding: 30px;
@@ -335,7 +335,7 @@ section {
   padding-bottom: 10px;
   background-size: 30px 30px;
   background-repeat: no-repeat;
-  background-position: left center;
+  background-position: left top;
 }
 
 .hard-skills__item:nth-child(1) {
