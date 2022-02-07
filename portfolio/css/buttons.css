@@ -1,0 +1,223 @@
+/* Contacts btn */
+.contacts__btn {
+  position: relative;
+  z-index: 0;
+}
+
+.contacts__btn:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.contacts__btn:active:after {
+  background: transparent;
+}
+
+.contacts__btn:hover:before {
+  opacity: 1;
+}
+
+.contacts__btn:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: var(--color-gold);
+}
+
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+/* Price-card btn */
+
+.price-card__btn {
+  background: none;
+  border: 2px solid;
+  transition: 0.25s;
+}
+
+.price-card__btn:hover,
+.price-card__btn:focus {
+  transition: 0.25s;
+  color: var(--color-gold);
+}
+
+.price-card__btn:hover,
+.price-card__btn:focus {
+  box-shadow: 0 0 0 2em rgba(110, 87, 15, 0);
+  animation: pulse 1s;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 var(--color-gold);
+  }
+}
+
+.price-card__btn {
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+}
+
+/*Hero btn */
+
+.hero__btn {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--color-gold);
+  z-index: 1;
+  position: relative;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  box-shadow: 0 2px 25px rgba(255, 217, 0, 0.502);
+}
+
+.hero__btn:focus {
+  outline: 0;
+}
+
+.hero__btn:before,
+.hero__btn:after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 140%;
+  height: 100%;
+  left: -20%;
+  z-index: -1000;
+  transition: all ease-in-out 0.5s;
+  background-repeat: no-repeat;
+}
+
+.hero__btn:before {
+  display: none;
+  top: -75%;
+  background-image: radial-gradient(
+      circle,
+      var(--color-gold) 20%,
+      transparent 20%
+    ),
+    radial-gradient(
+      circle,
+      transparent 20%,
+      var(--color-gold) 20%,
+      transparent 30%
+    ),
+    radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    radial-gradient(
+      circle,
+      transparent 10%,
+      var(--color-gold) 15%,
+      transparent 20%
+    ),
+    radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    radial-gradient(circle, var(--color-gold) 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+    10% 10%, 18% 18%;
+}
+
+.hero__btn:after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(
+      circle,
+      var(--color-gold) 20%,
+      transparent 20%
+    ),
+    radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    radial-gradient(
+      circle,
+      transparent 10%,
+      var(--color-gold) 15%,
+      transparent 20%
+    ),
+    radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    radial-gradient(circle, var(--color-gold) 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+
+.hero__btn:active {
+  transform: scale(0.9);
+  background-color: #6e5d28;
+  box-shadow: 0 2px 25px rgba(138, 115, 12, 0.2);
+}
+
+.hero__btn.animate:before {
+  display: block;
+  animation: topBubbles ease-in-out 0.75s forwards;
+}
+
+.hero__btn.animate:after {
+  display: block;
+  animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+
+@keyframes topBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+      40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+      50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+      50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+@keyframes bottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+      70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+      105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+      110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
