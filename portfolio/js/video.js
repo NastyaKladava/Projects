@@ -11,7 +11,9 @@ const progressBar = controls.querySelector('.video__progress-bar');
 
 const volumeBtn = videoBox.querySelector('.volume__btn');
 const controlVolume = videoBox.querySelector('.volume__progress');
+const videoCurTime = document.querySelector('.current-time');
 
+const increaseBtn = document.querySelector('.increase-btn');
 
 // Play video
 function playVideo() {
@@ -48,11 +50,27 @@ playBtnMain.addEventListener('click', playVideoMain);
 
 
 // Progress and update time
-function updateProgress() {
+function updateProgress(event) {
+    let currentTime = event.target.currentTime;
     progress.value = (video.currentTime / video.duration) * 100;
     const value = progress.value;
     progress.style.background = `linear-gradient(to right, #bdae82 0%, #bdae82 ${value}%, #808080 ${value}%, #808080 100%)`;
 
+
+    video.addEventListener('loadeddata', () => {
+        // update total time
+       let videoDuration = audio.duration;
+       let totalMin = Math.floor(videoDuration / 60);
+       let totalSec = Math.floor(videoDuration % 60);
+       if (totalSec < 10) totalSec = `0${totalSec}`;
+       videoDuration.innerHTML = `${totalMin}:${totalSec}`;
+       });
+
+        // update current time
+        let currentMin = Math.floor(currentTime / 60);
+        let currentSec = Math.floor(currentTime % 60);
+        if (currentSec < 10) currentSec = `0${currentSec}`;      
+        videoCurTime.innerHTML = `${currentMin}:${currentSec}`;
 }
 
 video.addEventListener('timeupdate', updateProgress);
@@ -65,7 +83,6 @@ function rewind() {
 }
 
 progress.addEventListener('change', rewind);
-
 
 // Volume
 function updateVol() {
@@ -99,5 +116,11 @@ function changeProgressColor() {
 controlVolume.addEventListener('input', changeProgressColor);
 
 
+// Increase video
+function increaseVideo() {
+    if(video.webkitSupportsFullscreen) video.webkitEnterFullScreen();
+}
+
+increaseBtn.addEventListener('click', increaseVideo);
 
 

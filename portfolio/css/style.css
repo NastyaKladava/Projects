@@ -495,6 +495,11 @@ body {
   border: 1px solid var(--color-gold);
 }
 
+.video__box.full {
+  width: 100vw;
+  height: 100vh;
+}
+
 .video__image {
   display: block;
 }
@@ -556,6 +561,7 @@ body {
 .video__btn--small {
   width: 20px;
   height: 20px;
+  margin-right: 8px;
   background-image: url(../assets/svg/play-triangle.svg);
   background-repeat: no-repeat;
   background-size: contain;
@@ -565,6 +571,7 @@ body {
 .video__btn-pause {
   width: 20px;
   height: 20px;
+  margin-right: 8px;
   background-image: url(../assets/svg/pause.svg);
   background-repeat: no-repeat;
   background-size: contain;
@@ -589,6 +596,7 @@ body {
 } */
 
 .video__progress {
+  margin-right: 8px;
   flex-basis: 95%;
   height: 5px;
   border-radius: 10px;
@@ -612,6 +620,11 @@ body {
   background: var(--color-gold);
 }
 
+.current-time {
+  display: inline-block;
+  color: var(--color-gold);
+}
+
 .volume {
   display: flex;
   justify-content: space-between;
@@ -623,6 +636,7 @@ body {
 .volume__btn {
   width: 20px;
   height: 20px;
+  margin-right: 8px;
   background-image: url(../assets/svg/volume.svg);
   background-repeat: no-repeat;
   background-size: contain;
@@ -632,7 +646,7 @@ body {
 .volume__btn--mute {
   width: 20px;
   height: 20px;
-  margin-right: 10px;
+  margin-right: 8px;
   background-image: url(../assets/svg/mute.svg);
   background-repeat: no-repeat;
   background-size: contain;
@@ -640,6 +654,7 @@ body {
 }
 
 .volume__progress {
+  margin-right: 8px;
   flex-basis: 87%;
   height: 5px;
   border-radius: 10px;
@@ -671,6 +686,21 @@ body {
 
 .volume__btn:hover,
 .volume__btn:active {
+  filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
+    contrast(87%);
+}
+
+.increase-btn {
+  width: 20px;
+  height: 20px;
+  background-image: url(../assets/svg/increase.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.increase-btn:hover,
+.increase-btn:active {
   filter: invert(26%) sepia(15%) saturate(638%) hue-rotate(7deg) brightness(92%)
     contrast(87%);
 }
