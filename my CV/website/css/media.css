@@ -140,12 +140,6 @@
     margin-bottom: 10px;
   }
 
-  .code__box {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 10px;
-  }
-
   .code__item--first {
     grid-column: 1/2;
     grid-row: 1/2;
@@ -185,6 +179,12 @@
 
   .skills__item {
     width: 90%;
+  }
+
+  .code__box {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(70%, 1fr));
+    grid-gap: 10px;
   }
 
   .code__item {
