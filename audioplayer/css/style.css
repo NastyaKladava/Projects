@@ -1,0 +1,390 @@
+/* Global */
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background-color: rgba(72, 114, 192, 0.5);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.visually-hidden {
+  position: fixed;
+  transform: scale(0);
+}
+
+.btn-reset {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.site-container {
+  overflow-x: hidden;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Player */
+.player-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  filter: blur(12px);
+}
+
+.player {
+  width: 100vw;
+  height: 100vh;
+  /* background-image: url(../assets/img/lemonade.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; */
+}
+
+.player__container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 500px;
+  width: 350px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(100, 149, 237, 0.5);
+  background: rgba(33, 33, 33, 1);
+  background: -moz-linear-gradient(
+    top,
+    rgba(33, 33, 33, 1) 0%,
+    rgba(219, 219, 219, 1) 0%,
+    rgba(51, 45, 51, 1) 100%
+  );
+  background: -webkit-gradient(
+    left top,
+    left bottom,
+    color-stop(0%, rgba(33, 33, 33, 1)),
+    color-stop(0%, rgba(219, 219, 219, 1)),
+    color-stop(100%, rgba(51, 45, 51, 1))
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(33, 33, 33, 1) 0%,
+    rgba(219, 219, 219, 1) 0%,
+    rgba(51, 45, 51, 1) 100%
+  );
+  background: -o-linear-gradient(
+    top,
+    rgba(33, 33, 33, 1) 0%,
+    rgba(219, 219, 219, 1) 0%,
+    rgba(51, 45, 51, 1) 100%
+  );
+  background: -ms-linear-gradient(
+    top,
+    rgba(33, 33, 33, 1) 0%,
+    rgba(219, 219, 219, 1) 0%,
+    rgba(51, 45, 51, 1) 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(33, 33, 33, 1) 0%,
+    rgba(219, 219, 219, 1) 0%,
+    rgba(51, 45, 51, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#212121', endColorstr='#332d33', GradientType=0 );
+}
+
+.player__cover {
+  position: relative;
+  flex: 1 1 80%;
+  background-image: url(../assets/img/lemonade.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.player-record {
+  position: absolute;
+  top: 2%;
+  right: 2%;
+  width: 60px;
+  height: 60px;
+  background-image: url(../assets/svg/record.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.player-record.active {
+  animation: rotate 5s linear infinite;
+}
+
+.player__main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.info-play {
+  padding: 0;
+  margin-right: 40px;
+  width: 55px;
+  height: 55px;
+  background-image: url(../assets/svg/play.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: 0.2s all ease;
+}
+
+.info-play:hover {
+  filter: brightness(0) saturate(100%) invert(9%) sepia(100%) saturate(7447%)
+    hue-rotate(247deg) brightness(89%) contrast(145%);
+}
+
+.info-pause {
+  background-image: url(../assets/svg/pause.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: 0.2s all ease;
+}
+
+.info-pause:hover {
+  filter: brightness(0) saturate(100%) invert(9%) sepia(100%) saturate(7447%)
+    hue-rotate(247deg) brightness(89%) contrast(145%);
+}
+
+.info__singer {
+  margin-right: 40px;
+}
+
+.info__singer-name {
+  font-size: 25px;
+  font-weight: bold;
+  color: blue;
+}
+
+.info__singer-song {
+  font-size: 17px;
+  color: #fff;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+}
+
+.actions__btn {
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  transition: 0.2s all ease;
+}
+
+.actions__btn:hover {
+  filter: brightness(0) saturate(100%) invert(9%) sepia(100%) saturate(7447%)
+    hue-rotate(247deg) brightness(89%) contrast(145%);
+}
+
+.actions__btn:hover {
+  filter: brightness(0) saturate(100%) invert(9%) sepia(100%) saturate(7447%)
+    hue-rotate(247deg) brightness(89%) contrast(145%);
+}
+
+.actions__btn--prev {
+  margin-bottom: 5px;
+  background-image: url(../assets/svg/backward.svg);
+  transition: 0.2s all ease;
+}
+
+.actions__btn--next {
+  background-image: url(../assets/svg/forward.svg);
+  transition: 0.2s all ease;
+}
+
+.progress {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.progress-bar {
+  /* width: 60px; */
+  width: 300px;
+  height: 3px;
+  cursor: pointer;
+  border-radius: 40px;
+  outline: none;
+  appearance: none;
+  background: linear-gradient(
+    to right,
+    royalblue 0%,
+    royalblue 00%,
+    #000 0%,
+    #000 100%
+  );
+}
+
+.progress-bar::-webkit-slider-thumb {
+  width: 3px;
+  height: 10px;
+  appearance: none;
+  cursor: pointer;
+  background: royalblue;
+}
+
+.progreess-duration {
+  position: absolute;
+  top: -22px;
+  right: 5px;
+  color: blue;
+}
+
+.progreess-current {
+  position: absolute;
+  bottom: -24px;
+  left: 5px;
+  color: #fff;
+}
+
+/* Footer */
+
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1260px;
+  padding: 15 25px;
+  margin: 0 auto;
+}
+
+.gh-link {
+  font-weight: bold;
+}
+
+.footer__data {
+  font-weight: bold;
+}
+
+.footer__logo {
+  width: 70px;
+  height: 70px;
+}
+
+/* Media */
+
+@media screen and (max-width: 1200px) {
+  .footer__container {
+    max-width: 960px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .footer__container {
+    max-width: 720px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .footer__container {
+    max-width: 540px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .player__container {
+    height: 80vh;
+    width: 60vw;
+  }
+
+  .info {
+    justify-content: center;
+  }
+
+  .info__singer-name {
+    text-align: center;
+  }
+
+  .info__singer-song {
+    text-align: center;
+  }
+
+  .info-play {
+    margin-right: 10px;
+    width: 45px;
+    height: 45px;
+  }
+
+  .info__singer {
+    margin-right: 10px;
+  }
+
+  .actions {
+    margin-right: 10px;
+    flex-direction: row;
+  }
+
+  .footer__container {
+    max-width: 90%;
+  }
+}
