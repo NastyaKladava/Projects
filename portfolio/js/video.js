@@ -21,7 +21,7 @@ function playVideo() {
         // playBtnMain.classList.toggle('none');
         play.classList.remove('video__btn--small');
         play.classList.add('video__btn-pause');
-        video.currentTime = 0;
+        // video.currentTime = 0;
         video.play();
         playBtnMain.classList.add('none');
         isPlay = true;
