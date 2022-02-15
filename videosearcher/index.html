@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie App</title>
+    <link rel="shortcut icon" href="./img/movie.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="site-container">
+      <header class="header">
+        <div class="container header__container">
+          <div class="main-title__wrapper">
+            <h1 class="main-title">Choose a movie!</h1>
+          </div>
+          <form action="/" method="get" class="search-form">
+            <button
+              class="search-form__btn search-form__btn--search btn-reset"
+            ></button>
+            <div class="search-form__field-box">
+              <input
+                name="search"
+                placeholder="Search"
+                type="search"
+                class="search-form__field"
+                id="inputSearch"
+                autocomplete="off"
+              />
+              <button
+                class="search-form__btn search-form__btn--delete btn-reset"
+              ></button>
+            </div>
+          </form>
+        </div>
+      </header>
+      <main>
+        <section class="movies">
+          <div class="container movies__container"></div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="container footer__container">
+          <a
+            href="https://github.com/NastyaKladava"
+            class="footer__link gh-link"
+            >GitHub</a
+          >
+          <a href="https://rs.school/" class="footer__link rs-link">
+            <img src="./img/rs_school_logo.svg" alt="Rs School logo" />
+          </a>
+          <span class="footer__data">2022</span>
+        </div>
+      </footer>
+      <script src="./script.js"></script>
+    </div>
+  </body>
+</html>
