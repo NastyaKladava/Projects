@@ -6,6 +6,18 @@
 
 .contacts__btn:before {
   content: "";
+  background: -o-linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
   background: linear-gradient(
     45deg,
     #ff0000,
@@ -23,11 +35,15 @@
   left: -2px;
   background-size: 400%;
   z-index: -1;
+  -webkit-filter: blur(5px);
   filter: blur(5px);
   width: calc(100% + 4px);
   height: calc(100% + 4px);
+  -webkit-animation: glowing 20s linear infinite;
   animation: glowing 20s linear infinite;
   opacity: 0;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
 }
 
@@ -50,6 +66,18 @@
   background-color: var(--color-gold);
 }
 
+@-webkit-keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
 @keyframes glowing {
   0% {
     background-position: 0 0;
@@ -67,23 +95,37 @@
 .price-card__btn {
   background: none;
   border: 2px solid;
+  -webkit-transition: 0.25s;
+  -o-transition: 0.25s;
   transition: 0.25s;
 }
 
 .price-card__btn:hover,
 .price-card__btn:focus {
+  -webkit-transition: 0.25s;
+  -o-transition: 0.25s;
   transition: 0.25s;
   color: var(--color-gold);
 }
 
 .price-card__btn:hover,
 .price-card__btn:focus {
+  -webkit-box-shadow: 0 0 0 2em rgba(110, 87, 15, 0);
   box-shadow: 0 0 0 2em rgba(110, 87, 15, 0);
+  -webkit-animation: pulse 1s;
   animation: pulse 1s;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 var(--color-gold);
+    box-shadow: 0 0 0 0 var(--color-gold);
+  }
 }
 
 @keyframes pulse {
   0% {
+    -webkit-box-shadow: 0 0 0 0 var(--color-gold);
     box-shadow: 0 0 0 0 var(--color-gold);
   }
 }
@@ -97,11 +139,25 @@
 
 .hero__btn {
   -webkit-appearance: none;
+  -moz-appearance: none;
   appearance: none;
   background-color: var(--color-gold);
   z-index: 1;
   position: relative;
+  -webkit-transition: -webkit-transform ease-in 0.1s,
+    -webkit-box-shadow ease-in 0.25s;
+  transition: -webkit-transform ease-in 0.1s, -webkit-box-shadow ease-in 0.25s;
+  -o-transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  -webkit-transition: -webkit-transform ease-in 0.1s,
+    -webkit-box-shadow ease-in 0.25s;
+  -webkit-transition: -webkit-transform ease-in 0.1s, -webkit-box-shadow ease-in 0.25s;
   transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s, -webkit-transform ease-in 0.1s, -webkit-box-shadow ease-in 0.25s;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s,
+    -webkit-transform ease-in 0.1s, -webkit-box-shadow ease-in 0.25s;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s,
+    -webkit-transform ease-in 0.1s, -webkit-box-shadow ease-in 0.25s;
+  -webkit-box-shadow: 0 2px 25px rgba(255, 217, 0, 0.502);
   box-shadow: 0 2px 25px rgba(255, 217, 0, 0.502);
 }
 
@@ -118,6 +174,8 @@
   height: 100%;
   left: -20%;
   z-index: -1000;
+  -webkit-transition: all ease-in-out 0.5s;
+  -o-transition: all ease-in-out 0.5s;
   transition: all ease-in-out 0.5s;
   background-repeat: no-repeat;
 }
@@ -125,6 +183,59 @@
 .hero__btn:before {
   display: none;
   top: -75%;
+  background-image: -o-radial-gradient(
+      circle,
+      var(--color-gold) 20%,
+      transparent 20%
+    ),
+    -o-radial-gradient(circle, transparent 20%, var(--color-gold) 20%, transparent
+          30%),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    -o-radial-gradient(circle, transparent 10%, var(--color-gold) 15%, transparent
+          20%),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%);
+  background-image: -o-radial-gradient(
+      circle,
+      var(--color-gold) 20%,
+      transparent 20%
+    ),
+    -o-radial-gradient(circle, transparent 20%, var(--color-gold) 20%, transparent
+          30%),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    -o-radial-gradient(circle, transparent 10%, var(--color-gold) 15%, transparent
+          20%),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%);
+  background-image: -o-radial-gradient(
+      circle,
+      var(--color-gold) 20%,
+      transparent 20%
+    ),
+    -o-radial-gradient(
+      circle,
+      transparent 20%,
+      var(--color-gold) 20%,
+      transparent 30%
+    ),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    -o-radial-gradient(
+      circle,
+      transparent 10%,
+      var(--color-gold) 15%,
+      transparent 20%
+    ),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%);
   background-image: radial-gradient(
       circle,
       var(--color-gold) 20%,
@@ -155,6 +266,46 @@
 .hero__btn:after {
   display: none;
   bottom: -75%;
+  background-image: -o-radial-gradient(
+      circle,
+      var(--color-gold) 20%,
+      transparent 20%
+    ),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    -o-radial-gradient(circle, transparent 10%, var(--color-gold) 15%, transparent
+          20%),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%);
+  background-image: -o-radial-gradient(
+      circle,
+      var(--color-gold) 20%,
+      transparent 20%
+    ),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    -o-radial-gradient(circle, transparent 10%, var(--color-gold) 15%, transparent
+          20%),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%);
+  background-image: -o-radial-gradient(
+      circle,
+      var(--color-gold) 20%,
+      transparent 20%
+    ),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    -o-radial-gradient(
+      circle,
+      transparent 10%,
+      var(--color-gold) 15%,
+      transparent 20%
+    ),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%),
+    -o-radial-gradient(circle, var(--color-gold) 20%, transparent 20%);
   background-image: radial-gradient(
       circle,
       var(--color-gold) 20%,
@@ -175,19 +326,40 @@
 }
 
 .hero__btn:active {
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
   transform: scale(0.9);
   background-color: #6e5d28;
+  -webkit-box-shadow: 0 2px 25px rgba(138, 115, 12, 0.2);
   box-shadow: 0 2px 25px rgba(138, 115, 12, 0.2);
 }
 
 .hero__btn.animate:before {
   display: block;
+  -webkit-animation: topBubbles ease-in-out 0.75s forwards;
   animation: topBubbles ease-in-out 0.75s forwards;
 }
 
 .hero__btn.animate:after {
   display: block;
+  -webkit-animation: bottomBubbles ease-in-out 0.75s forwards;
   animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+
+@-webkit-keyframes topBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+      40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+      50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+      50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
 }
 
 @keyframes topBubbles {
@@ -202,6 +374,22 @@
   100% {
     background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
       50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+@-webkit-keyframes bottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+      70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+      105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+      110% 10%;
     background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
   }
 }

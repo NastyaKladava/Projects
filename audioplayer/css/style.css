@@ -43,7 +43,9 @@ img {
 
 .visually-hidden {
   position: fixed;
-  transform: scale(0);
+  -webkit-transform: scale(0);
+      -ms-transform: scale(0);
+          transform: scale(0);
 }
 
 .btn-reset {
@@ -56,12 +58,25 @@ img {
   overflow-x: hidden;
 }
 
-@keyframes rotate {
+@-webkit-keyframes rotate {
   0% {
-    transform: rotate(0);
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
   }
   100% {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
@@ -75,7 +90,8 @@ img {
   z-index: -1;
   height: 100%;
   width: 100%;
-  filter: blur(12px);
+  -webkit-filter: blur(12px);
+          filter: blur(12px);
 }
 
 .player {
@@ -93,20 +109,24 @@ img {
   left: 50%;
   height: 500px;
   width: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   overflow: hidden;
-  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(100, 149, 237, 0.5);
+  -webkit-box-shadow: 0 0 10px rgba(100, 149, 237, 0.5);
+          box-shadow: 0 0 10px rgba(100, 149, 237, 0.5);
   background: rgba(33, 33, 33, 1);
-  background: -moz-linear-gradient(
-    top,
-    rgba(33, 33, 33, 1) 0%,
-    rgba(219, 219, 219, 1) 0%,
-    rgba(51, 45, 51, 1) 100%
-  );
   background: -webkit-gradient(
     left top,
     left bottom,
@@ -114,23 +134,18 @@ img {
     color-stop(0%, rgba(219, 219, 219, 1)),
     color-stop(100%, rgba(51, 45, 51, 1))
   );
-  background: -webkit-linear-gradient(
-    top,
-    rgba(33, 33, 33, 1) 0%,
-    rgba(219, 219, 219, 1) 0%,
-    rgba(51, 45, 51, 1) 100%
-  );
   background: -o-linear-gradient(
     top,
     rgba(33, 33, 33, 1) 0%,
     rgba(219, 219, 219, 1) 0%,
     rgba(51, 45, 51, 1) 100%
   );
-  background: -ms-linear-gradient(
-    top,
-    rgba(33, 33, 33, 1) 0%,
-    rgba(219, 219, 219, 1) 0%,
-    rgba(51, 45, 51, 1) 100%
+  background: -webkit-gradient(
+    linear,
+    left top, left bottom,
+    from(rgba(33, 33, 33, 1)),
+    color-stop(0%, rgba(219, 219, 219, 1)),
+    to(rgba(51, 45, 51, 1))
   );
   background: linear-gradient(
     to bottom,
@@ -143,7 +158,9 @@ img {
 
 .player__cover {
   position: relative;
-  flex: 1 1 80%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 80%;
+          flex: 1 1 80%;
   background-image: url(../assets/img/lemonade.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -163,21 +180,36 @@ img {
 }
 
 .player-record.active {
-  animation: rotate 5s linear infinite;
+  -webkit-animation: rotate 5s linear infinite;
+          animation: rotate 5s linear infinite;
 }
 
 .player__main {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   padding: 25px;
 }
 
 .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 0;
   margin-bottom: 30px;
 }
@@ -191,11 +223,15 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  -webkit-transition: 0.2s all ease;
+  -o-transition: 0.2s all ease;
   transition: 0.2s all ease;
 }
 
 .info-play:hover {
-  filter: brightness(0) saturate(100%) invert(9%) sepia(100%) saturate(7447%)
+  -webkit-filter: brightness(0) saturate(100%) invert(9%) sepia(100%) saturate(7447%)
+    hue-rotate(247deg) brightness(89%) contrast(145%);
+          filter: brightness(0) saturate(100%) invert(9%) sepia(100%) saturate(7447%)
     hue-rotate(247deg) brightness(89%) contrast(145%);
 }
 
@@ -204,11 +240,15 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  -webkit-transition: 0.2s all ease;
+  -o-transition: 0.2s all ease;
   transition: 0.2s all ease;
 }
 
 .info-pause:hover {
-  filter: brightness(0) saturate(100%) invert(9%) sepia(100%) saturate(7447%)
+  -webkit-filter: brightness(0) saturate(100%) invert(9%) sepia(100%) saturate(7447%)
+    hue-rotate(247deg) brightness(89%) contrast(145%);
+          filter: brightness(0) saturate(100%) invert(9%) sepia(100%) saturate(7447%)
     hue-rotate(247deg) brightness(89%) contrast(145%);
 }
 
@@ -228,8 +268,13 @@ img {
 }
 
 .actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .actions__btn {
@@ -238,34 +283,48 @@ img {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  -webkit-transition: 0.2s all ease;
+  -o-transition: 0.2s all ease;
   transition: 0.2s all ease;
 }
 
 .actions__btn:hover {
-  filter: brightness(0) saturate(100%) invert(9%) sepia(100%) saturate(7447%)
+  -webkit-filter: brightness(0) saturate(100%) invert(9%) sepia(100%) saturate(7447%)
+    hue-rotate(247deg) brightness(89%) contrast(145%);
+          filter: brightness(0) saturate(100%) invert(9%) sepia(100%) saturate(7447%)
     hue-rotate(247deg) brightness(89%) contrast(145%);
 }
 
 .actions__btn:hover {
-  filter: brightness(0) saturate(100%) invert(9%) sepia(100%) saturate(7447%)
+  -webkit-filter: brightness(0) saturate(100%) invert(9%) sepia(100%) saturate(7447%)
+    hue-rotate(247deg) brightness(89%) contrast(145%);
+          filter: brightness(0) saturate(100%) invert(9%) sepia(100%) saturate(7447%)
     hue-rotate(247deg) brightness(89%) contrast(145%);
 }
 
 .actions__btn--prev {
   margin-bottom: 5px;
   background-image: url(../assets/svg/backward.svg);
+  -webkit-transition: 0.2s all ease;
+  -o-transition: 0.2s all ease;
   transition: 0.2s all ease;
 }
 
 .actions__btn--next {
   background-image: url(../assets/svg/forward.svg);
+  -webkit-transition: 0.2s all ease;
+  -o-transition: 0.2s all ease;
   transition: 0.2s all ease;
 }
 
 .progress {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .progress-bar {
@@ -275,7 +334,24 @@ img {
   cursor: pointer;
   border-radius: 40px;
   outline: none;
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: -webkit-gradient(
+    linear,
+    left top, right top,
+    from(royalblue),
+    color-stop(00%, royalblue),
+    color-stop(0%, #000),
+    to(#000)
+  );
+  background: -o-linear-gradient(
+    left,
+    royalblue 0%,
+    royalblue 00%,
+    #000 0%,
+    #000 100%
+  );
   background: linear-gradient(
     to right,
     royalblue 0%,
@@ -288,7 +364,8 @@ img {
 .progress-bar::-webkit-slider-thumb {
   width: 3px;
   height: 10px;
-  appearance: none;
+  -webkit-appearance: none;
+          appearance: none;
   cursor: pointer;
   background: royalblue;
 }
@@ -310,9 +387,15 @@ img {
 /* Footer */
 
 .footer__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   max-width: 1260px;
   padding: 15 25px;
   margin: 0 auto;
@@ -358,7 +441,9 @@ img {
   }
 
   .info {
-    justify-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 
   .info__singer-name {
@@ -381,7 +466,10 @@ img {
 
   .actions {
     margin-right: 10px;
-    flex-direction: row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
 
   .footer__container {

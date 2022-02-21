@@ -98,7 +98,6 @@
     transition-delay: 0.6s;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
     transform: rotate(45deg);
   }
 
@@ -116,14 +115,12 @@
   .burger.open .burger__line:nth-child(1) {
     -webkit-transform: translateY(10px);
     -ms-transform: translateY(10px);
-    -o-transform: translateY(10px);
     transform: translateY(10px);
   }
 
   .burger.open .burger__line:nth-child(3) {
     -webkit-transform: translateY(-13px) rotate(90deg);
     -ms-transform: translateY(-13px) rotate(90deg);
-    -o-transform: translateY(-13px) rotate(90deg);
     transform: translateY(-13px) rotate(90deg);
   }
 

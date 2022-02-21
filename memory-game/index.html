@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory game</title>
+    <link rel="stylesheet" href="./styles/normalize.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <div class="site-container">
+      <div class="overlay active"></div>
+      <header>
+        <h1 class="visually-hidden">Memory game</h1>
+      </header>
+      <main>
+        <section class="game__section">
+          <div class="container game__container">
+            <audio src="./assets/audio/click.mp3" class="audio-click"></audio>
+            <audio
+              src="./assets/audio/gameover.wav"
+              class="audio-gameover"
+            ></audio>
+            <audio src="./assets/audio/goodjob.mp3" class="audio-job"></audio>
+            <div class="game__content">
+              <div class="game__card card" data-image="cat">
+                <div class="front-card cat"></div>
+                <div class="back-card"></div>
+              </div>
+              <div class="game__card card" data-image="sun">
+                <div class="front-card sun"></div>
+                <div class="back-card"></div>
+              </div>
+              <div class="game__card card" data-image="star">
+                <div class="front-card star"></div>
+                <div class="back-card"></div>
+              </div>
+              <div class="game__card card" data-image="heart">
+                <div class="front-card heart"></div>
+                <div class="back-card"></div>
+              </div>
+              <div class="game__card card" data-image="cool">
+                <div class="front-card cool"></div>
+                <div class="back-card"></div>
+              </div>
+              <div class="game__card card" data-image="cloud">
+                <div class="front-card cloud"></div>
+                <div class="back-card"></div>
+              </div>
+              <div class="game__card card" data-image="cat">
+                <div class="front-card cat"></div>
+                <div class="back-card"></div>
+              </div>
+              <div class="game__card card" data-image="flower">
+                <div class="front-card flower"></div>
+                <div class="back-card"></div>
+              </div>
+              <div class="game__card card" data-image="trees">
+                <div class="front-card trees"></div>
+                <div class="back-card"></div>
+              </div>
+              <div class="game__card card" data-image="sun">
+                <div class="front-card sun"></div>
+                <div class="back-card"></div>
+              </div>
+              <div class="game__card card" data-image="star">
+                <div class="front-card star"></div>
+                <div class="back-card"></div>
+              </div>
+              <div class="game__card card" data-image="flower">
+                <div class="front-card flower"></div>
+                <div class="back-card"></div>
+              </div>
+              <div class="game__card card" data-image="heart">
+                <div class="front-card heart"></div>
+                <div class="back-card"></div>
+              </div>
+              <div class="game__card card" data-image="cool">
+                <div class="front-card cool"></div>
+                <div class="back-card"></div>
+              </div>
+              <div class="game__card card" data-image="trees">
+                <div class="front-card trees"></div>
+                <div class="back-card"></div>
+              </div>
+              <div class="game__card" data-image="cloud">
+                <div class="front-card cloud"></div>
+                <div class="back-card"></div>
+              </div>
+            </div>
+            <div class="game__score">
+              <table class="game__score-content table hidden">
+                <caption class="taple__caption">
+                  High scores
+                </caption>
+                <thead>
+                  <tr class="table__subtitles">
+                    <th>Name</th>
+                    <th>Score</th>
+                  </tr>
+                </thead>
+                <tbody class="table__content"></tbody>
+              </table>
+              <p class="taple__specification hidden">
+                &ast;acc. to the lowest number of moves per game
+              </p>
+              <button class="game__score-btn game__btn btn-reset open">
+                Show high scores
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer>
+        <div class="container footer__container">
+          <ul class="footer__list">
+            <li class="footer__item">
+              <span class="footer__year">&copy; 2022</span>
+              <a
+                href="https://github.com/NastyaKladava"
+                class="footer__link gh-link"
+              >
+              </a>
+            </li>
+            <li class="footer__item">
+              <a
+                href="https://rs.school/js-stage0/"
+                class="footer__link rss-link"
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+      <div class="game__modal startgame active">
+        <div class="game__modal-content">
+          <h2 class="startgame__title">
+            Please, enter your name and enjoy the game!
+          </h2>
+          <form action="#" class="startgame__form">
+            <input
+              type="text"
+              class="startgame__field"
+              name="name"
+              id="userName"
+              placeholder="Enter your name"
+              autocomplete="off"
+              autofocus
+            />
+            <button class="input-btn btn-reset"></button>
+            <button class="startgame__btn game__btn btn-reset" disabled>
+              Start!
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="game__modal endgame">
+        <div class="game__modal-content">
+          <p class="endgame__moves"></p>
+          <button class="endgame__btn btn-reset restart-btn game__btn">
+            Play again
+          </button>
+        </div>
+      </div>
+    </div>
+    <script src="./confetti.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
