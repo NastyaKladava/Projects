@@ -22,6 +22,11 @@ const winAudio = document.querySelector('.audio-gameover');
 const clickAudio = document.querySelector('.audio-click');
 const goodAudio = document.querySelector('.audio-job');
 
+const table = document.querySelector('.game__score-content');
+const tableBody = document.querySelector('.table__content');
+const tableSubtitles = document.querySelector('.table__subtitles');
+const tableBtn = document.querySelector('.game__score-btn');
+const tapleSpecification = document.querySelector('.taple__specification');
 
 //Startgame
 startInput.addEventListener('keyup', () => {
@@ -35,6 +40,12 @@ const startgame = (e) => {
     username = startInput.value;
     overlay.classList.remove('active');
     startModal.classList.remove('active');
+
+    tableBody.innerHTML = highScores
+    .map(gamer => {
+        return `<tr class="table__row"><td>${gamer.name}</td><td>${gamer.score}</td></tr>`;
+    })
+    .join('');
 };
 startBtn.addEventListener('click', startgame);
 startInputBtn.onclick = () => startInput.value = '';
@@ -117,6 +128,7 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 
 // Endgame
 const playAgain = () => {
+    // e.preventDefault();
     endModal.classList.remove('active');
     startModal.classList.add('active');
     [isFlipped, isLocked] = [false, false];
@@ -133,12 +145,12 @@ const endGame = () => {
     startInput.value = '';
     movesPerGame = move;
     endText.innerHTML = `Game over!\n Moves per game - ${move}.`;
+    matchCounter = 0;
 };
 
 // Local storage
 const highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 const numberOfHighScores = 10;
-
 
 const saveHighScore = (e) => {
     e.preventDefault();
@@ -147,7 +159,6 @@ const saveHighScore = (e) => {
         name: username
     };
 
-    console.log(gamer);
     highScores.push(gamer);
     highScores.sort((a, b) => a.score - b.score);
     highScores.splice(numberOfHighScores);
@@ -156,14 +167,7 @@ const saveHighScore = (e) => {
 };
 endBtn.addEventListener('click', saveHighScore);
 
-
 // Score table
-const table = document.querySelector('.game__score-content');
-const tableBody = document.querySelector('.table__content');
-const tableSubtitles = document.querySelector('.table__subtitles');
-const tableBtn = document.querySelector('.game__score-btn');
-const tapleSpecification = document.querySelector('.taple__specification');
-
 const openTable = () => {
     table.classList.toggle('hidden');
     tapleSpecification.classList.toggle('hidden');
@@ -171,8 +175,9 @@ const openTable = () => {
 };
 tableBtn.addEventListener('click', openTable);
 
-tableBody.innerHTML = highScores
-    .map(gamer => {
-      return `<tr class="table__row"><td>${gamer.name}</td><td>${gamer.score}</td></tr>`;
-      })
-    .join('');
+
+// tableBody.innerHTML = highScores
+// .map(gamer => {
+//   return `<tr class="table__row"><td>${gamer.name}</td><td>${gamer.score}</td></tr>`;
+//   })
+// .join('');
